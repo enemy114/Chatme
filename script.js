@@ -1,8 +1,21 @@
-function search() {
-  const query = document.getElementById("searchBox").value;
-  if (query.trim() === "") {
-    document.getElementById("result").innerHTML = "Please type something to search.";
-  } else {
-    document.getElementById("result").innerHTML = `You searched for: <b>${query}</b>`;
-  }
-}
+// When the page loads
+window.onload = function () {
+    console.log("JS Loaded!");
+};
+
+// When the search button is clicked
+document.addEventListener("DOMContentLoaded", function () {
+    const searchBtn = document.getElementById("searchBtn");
+    const searchInput = document.getElementById("searchInput");
+
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener("click", function () {
+            const userQuery = searchInput.value.trim();
+            if (userQuery) {
+                alert("You searched for: " + userQuery);
+            } else {
+                alert("Please type something to search.");
+            }
+        });
+    }
+});
